@@ -4,3 +4,6 @@ torch
 textblob
 vaderSentiment
 pandas
+git add requirements.txt
+git commit -m "Add base dependencies"
+git push
