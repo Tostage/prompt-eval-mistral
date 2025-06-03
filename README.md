@@ -34,3 +34,10 @@ pip install -r requirements.txt
 
 # Run evaluation loop
 python test_prompt.py
+
+##Tech Stack
+
+-Falcon 1B via Hugging Face Transformers
+-Python
+-Streamlit (optional UI layer)
+-CSV logging for evaluation output
