@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-model_name = "mistralai/Mistral-7B-v0.1"
+model_name = "tiiuae/falcon-7b-instruct"
 
 print("[LOADING MODEL] This may take a minute...")
 
