@@ -1,71 +1,44 @@
-# Prompt Evaluation Sandbox
+# Prompt Evaluation Sandbox (LLM Judgment System)
 
-This project simulates the real-world LLM evaluation tasks. It allows a human reviewer to input prompts, generate model completions and score the responses using a structured UI.
+This project simulates real-world prompt rating tasks like those used by Outlier AI and Surge AI. It evaluates LLM-generated responses for:
 
+-  Factual Accuracy  
+-  Clarity & Coherence  
+-  Tone Appropriateness  
 
-##  Project Purpose
-
-This tool was built to showcase:
-- ✅ Your judgment accuracy for factuality, tone, and clarity
-- ✅ Your ability to replicate Outlier-style annotation workflows
-- ✅ A lightweight app that mimics human-in-the-loop evaluation tasks
+> This tool helps assess and train LLM behavior — a core skill for language model rater positions.
 
 
-##  How It Works
+##  Key Features
 
-Using the app, you can:
-1. Input a natural language prompt
-2. Generate a response from an open-source language model
-3. Evaluate the response using 3 sliders:
-   - **Factual Accuracy (0–5)**
-   - **Clarity & Coherence (0–5)**
-   - **Tone Appropriateness (0–5)**
-4. Optionally leave comments or reviewer notes
-5. Save all evaluations to a `.csv` file for auditing or submission
+- **Open-source Falcon-7B model integration**
+- Real-time prompt generation and response scoring
+- Interactive scoring interface for clarity, tone, and factuality
+- Automatic CSV logging (`prompt_eval_log.csv`) for portfolio export
+- HuggingFace + PyTorch + Transformers pipeline
 
+---
 
-##  Technologies Used
+##  Screenshots
 
-- `Streamlit` for the interactive front end
-- `transformers` and `pytorch` to run open LLMs like `pythia-1b-deduped`
-- `pandas` to log scored results to CSV
+| LLM Output + Human Judgment UI | Logged Evaluation File |
+|-------------------------------|-------------------------|
+| ![interface](images/sample_ui.png) | ![csv](images/sample_csv.png) |
 
 
-##  Example Prompt Evaluation
-
-**Prompt:**  
-> Explain the greenhouse effect
-
-**Model Response:**  
-> The greenhouse effect is when carbon monoxide traps heat in Earth's atmosphere.
-
-**Evaluation:**  
-- Factuality: 2/5  
-- Clarity: 4/5  
-- Tone: 5/5  
-- Notes: CO confused with CO₂; explanation mostly clear but scientifically incorrect
-
-
-##  File Structure
-prompt-eval-sandbox/
-├── llm_runner.py # Runs the LLM model
-├── streamlit_app.py # Streamlit front-end app
-├── prompt_eval_log.csv # Evaluation results (CSV)
-├── requirements.txt # Python dependencies
-└── README.md # This file
-
-
-##  How to Run the App
-
-### 1. Clone the repository
+## How to Run
 
 ```bash
-git clone https://github.com/your-username/prompt-eval-sandbox.git
-cd prompt-eval-sandbox
+# Clone the repo
+git clone https://github.com/Tostage/prompt-eval-mistral.git
+cd prompt-eval-mistral
+
+# Set up environment
+python -m venv venv
+source venv/bin/activate  # (or venv\Scripts\activate on Windows)
+
+# Install requirements
 pip install -r requirements.txt
-streamlit run streamlit_app.py
 
-Sample Dataset
- - 10 reviewed prompts, responses and evaluation scores are included.
-
- - prompt_eval_log.csv — demonstrates ability to detect hallucination, assess tone shifts and evaluate clarity.
+# Run evaluation loop
+python test_prompt.py
