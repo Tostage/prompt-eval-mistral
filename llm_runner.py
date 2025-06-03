@@ -1,8 +1,8 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-model_name = "tiiuae/falcon-7b-instruct"
+model_name = "tiiuae/falcon-rw-1b"
 
-print("[LOADING MODEL] This may take a minute...")
+print("[LOADING MODEL] This is a smaller Falcon model — fast and open.")
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
