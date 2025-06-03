@@ -1,7 +1,8 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 # Load the Mistral model
-model_name = "mistralai/Mistral-7B-Instruct-v0.1"
+model_name = "TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
+
 
 print("[LOADING MODEL] This may take a minute...")
 
