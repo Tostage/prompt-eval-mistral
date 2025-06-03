@@ -17,14 +17,6 @@ This project simulates real-world prompt rating tasks like those used by Outlier
 - Automatic CSV logging (`prompt_eval_log.csv`) for portfolio export
 - HuggingFace + PyTorch + Transformers pipeline
 
----
-
-##  Screenshots
-
-| LLM Output + Human Judgment UI | Logged Evaluation File |
-|-------------------------------|-------------------------|
-| ![interface](images/sample_ui.png) | ![csv](images/sample_csv.png) |
-
 
 ## How to Run
 
